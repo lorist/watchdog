@@ -13,7 +13,7 @@ A simple Python app that watches a folder for new files, uploads them to MediaCM
         MEDIACMS_USER='admin'
         MEDIACMS_PASSWORD='password'
         MEDIACMS_URL='https://mediacms.example.com/api/v1/media'
-        WATCH_FOLDER='../nginx-rtmp/videos'
+        WATCH_FOLDER='/tmp/videos'
         ```
 3. Build and run the container: 
 
