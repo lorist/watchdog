@@ -64,17 +64,15 @@ class Watcher:
 class Handler(FileSystemEventHandler):
 
     @staticmethod
-    def on_any_event(event):
-        if event.is_directory:
-            return None
-        
-        elif event.event_type == 'created':
-            # Taken any action here when a file is created.
-            print("Received modified event - %s." % event.src_path)
-            historicalSize = -1
-            while (historicalSize != os.path.getsize(event.src_path)):
-                historicalSize = os.path.getsize(event.src_path)
-                time.sleep(1)
+    def on_closed(event):
+        file_size = -1
+        while file_size != os.path.getsize(event.src_path):
+            file_size = os.path.getsize(event.src_path)
+            print(file_size)
+            time.sleep(1)
+
+        if event:
+            print("file created:{}".format(event.src_path))
             print("Finished event - %s." % event.src_path)
             print("uploading to mediacms - %s." % event.src_path)
             upload(event.src_path)
