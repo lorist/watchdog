@@ -8,6 +8,7 @@ A simple Python app that watches a folder for new files, uploads them to MediaCM
 2. Create a file in the watchdog folder called `.env`
     In this file, add environment variables that the docker container will use to upload files to MediaCMS.
     Example:
+
         ```
         MEDIACMS_USER='admin'
         MEDIACMS_PASSWORD='password'
@@ -15,6 +16,7 @@ A simple Python app that watches a folder for new files, uploads them to MediaCM
         WATCH_FOLDER='../nginx-rtmp/videos'
         ```
 3. Build and run the container: 
+
         ```
         docker compose build
         docker compose up -d
