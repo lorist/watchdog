@@ -68,7 +68,7 @@ class Handler(FileSystemEventHandler):
         file_size = -1
         while file_size != os.path.getsize(event.src_path):
             file_size = os.path.getsize(event.src_path)
-            print(file_size)
+            print("file size: ", file_size)
             time.sleep(1)
 
         if event:
